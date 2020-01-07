@@ -15,6 +15,7 @@ const greeting = (word) => {
 
 const speaker = (message, callback) => {
   // Solution code here...
+  return callback(message);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -35,10 +36,15 @@ Return the modified array.
 
 const addValues = (arr, value) => {
   // Solution code here...
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
+  for (let i = 0; i < times; i++) {
+    callback(num, arr);
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -61,7 +67,7 @@ const removeOne = (num, arr) => {
 const removeElements = (arr, callback) => {
   // Solution code here...
   for (let i = 0; i < arr.length; i++) {
-    callback(arr[i], arr)
+    callback(arr[i], arr);
   }
   return arr;
 
@@ -75,7 +81,7 @@ Write a function named removeWithForEach that produces the same output as challe
 
 const removeWithForEach = (arr, callback) => {
   // Solution code here...
-  arr.forEach(num => (num, arr));
+  arr.forEach(num => callback(num, arr));
   return arr;
 };
 
@@ -91,6 +97,12 @@ This anonymous function should accept up to three arguments: the element, the in
 
 const removeWithAnon = (arr) => {
   // Solution code here...
+  arr.forEach((element) => {
+    if (element % 3 === 2) {
+      arr.pop();
+    }
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -112,6 +124,13 @@ This function should use forEach to populate your grocery list based on the stor
 
 const createList = (availableItems) => {
   // Solution code here...
+  const list = [];
+  availableItems.forEach(item => {
+    if (item.available) {
+      list.push(item.name);
+    }
+  });
+  return list;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -127,9 +146,24 @@ Iterate over the array using forEach to determine the output based on several ru
 
 Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
-
 const fizzbuzz = (arr) => {
-  // Solution code here...
+  let output = [];
+  arr.forEach(num => {
+    // Solution code here...
+    if (num % 3) {
+      output.push('fizz');
+    }
+    else if (num % 5) {
+      output.push('buzz');
+    }
+    else if (num % 15 === 0) {
+      output.push('fizz buzz');
+    }
+    else {
+      output.push(num);
+    }
+  });
+  return output;
 };
 
 /* ------------------------------------------------------------------------------------------------
