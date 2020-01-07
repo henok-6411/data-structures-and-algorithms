@@ -1,5 +1,3 @@
-'use strict';
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
 
@@ -10,7 +8,6 @@ Then, write a function named speaker that takes in a string and a callback funct
 
 const greeting = (word) => {
   // Solution code here...
-  return word.toUppercase();
 };
 
 const speaker = (message, callback) => {
@@ -55,16 +52,10 @@ Return the modified array.
 
 const removeOne = (num, arr) => {
   // Solution code here...
-  if (num % 3 === 2) arr.pop();
 };
 
 const removeElements = (arr, callback) => {
   // Solution code here...
-  for (let i = 0; i < arr.length; i++) {
-    callback(arr[i], arr)
-  }
-  return arr;
-
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -75,8 +66,6 @@ Write a function named removeWithForEach that produces the same output as challe
 
 const removeWithForEach = (arr, callback) => {
   // Solution code here...
-  arr.forEach(num => (num, arr));
-  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
