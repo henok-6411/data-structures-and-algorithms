@@ -96,8 +96,9 @@ console.log(a) prints [1, 2, 3, 4]
 
 const append = (arr1, arr2) => {
   // Solution code here...
+  // henok is a container for our new array. 
 
-  arr1.arr2 = arr1;
+  arr2.forEach(henok => arr1.push(henok));
 
 };
 
