@@ -39,8 +39,10 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 
 const citiesAtoJ = (arr) => {
   // Solution code here...
-  let checker = /\b([a-j])/g;
-  return checker.restore(arr);
+  // let checker = /\b([a-j])/g;
+  // return checker.restore(arr);
+
+  return arr.match(/[A-J]\w+/gm) || [];
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -57,6 +59,8 @@ Do not use the vertical bar (pipe) in your pattern.
 
 const matchMonth = (input) => {
   // Solution code here...
+  let checker = /\b()\w+ct+?/gm;
+  return input.match(checker);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -71,6 +75,11 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 
 const noPunctuation = str => {
   // Solution code here...
+  let checker = /(\w*\s)/g;
+
+  return str.match(checker);
+  // return str.match(checker);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -87,6 +96,9 @@ For example, 'Welcome to Code 301!' will return 'W_lc_m_ t_ C_d_ 301!'.
 
 let hangman = (str) => {
   // Solution code here...
+  let checker = /(a|e|i|o|u)/gi;
+  return str.replace(checker, '_');
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -103,6 +115,7 @@ const seashells = 'She sells seashells by the seashore. The shells she sells are
 
 const findShells = (str) => {
   // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
