@@ -178,13 +178,17 @@ removeLastCharacters('Gregor', 9) returns ''
 
 const removeLastCharacters = (str, numberOfCharacters) => {
   // Solution code here...
-  if (numberOfCharacters > str.length) {
-    return '';
-  }
-  if (numberOfCharacters < 1) {
-    return str;
-  }
+  for (let i = 0; i < str.length; i++) {
+    if (numberOfCharacters > str.length[i]) {
+      return '';
+    }
+    if (numberOfCharacters < 1) {
+      return str;
+    } else {
+      return numberOfCharacters
+    }
 
+  }
 };
 
 
@@ -196,10 +200,11 @@ Write a function named totalSumCSV that, given a string of comma-separated value
 
 const totalSumCSV = (str) => {
   let total = 0;
-  for (let i = 0; i < str.length; i++) {
-    let strIndex = str[i].split(' ');
-    let strNumber = strIndex.parseInt(str, 10);
-    strNumber++;
+  let strIndex = str.split(' ');
+  for (let i = 0; i < strIndex.length; i++) {
+
+
+    total = parseInt(strIndex[i]);
 
   }
 
