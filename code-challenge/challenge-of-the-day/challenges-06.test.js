@@ -165,28 +165,36 @@ Write a function named totalCharacters that takes in an array and returns the nu
 ------------------------------------------------------------------------------------------------ */
 
 const totalCharacters = (arr) => {
-  // Solution code here...
-  // const splitArr = arr.split('');
-  // define count = 0
-  // 1. loop through arr(characters)
-  // 2. if ( arr[i].name) count+=1
-  // 3. if ( arr[i].spouse) count+=1
-  // 4. if (arr[i].children !=null && arr[i].children.isArray() )
-  // 5. loop through arr[i].children if not empty string count+=1
-  let count = 0;
+
+  let newArray = [];
+  // let arrString = arr.split(' , ');
+
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i].name) {
-      return count += 1;
-    } if (arr[i].spouse) {
-      return count += 1;
-    } for (let j = 0; j < children.length; j++) {
-      if (arr[i].children[j]) {
-        return count += 1;
+
+    newArray.push(arr[i].name);
+    console.log(newArray);
+    if (arr[i].spouse) {
+      newArray.push(arr[i].spouse);
+
+    } if (arr[i].children) {
+      for (let j = 0; j < arr.length; j++) {
+        newArray.push(arr[j].children);
+        console.log(newArray);
+
       }
     }
   }
+  let newArrayString = newArray.toString();
+  let newArraySplit = newArrayString.split(' , ');
+  let count = newArraySplit.length;
+  return count;
 
 };
+
+
+////////// you need empty arra
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
@@ -201,9 +209,9 @@ For example: [{ house: 'Stark', members: 7 }, { house: 'Arryn', members: 3 }, ..
 const houseSize = (arr) => {
   const sizes = [];
   // Solution code here...
-  characters.forEach(obj => {
-    sizes.push(({ arr: house, arr: members }));
-  });
+  for (let i = 0; i < arr.length; i++) {
+    sizes.push(arr[i].name);
+  }
 
   return sizes;
 };
