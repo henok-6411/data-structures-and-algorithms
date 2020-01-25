@@ -148,12 +148,13 @@ const snorlaxAbilities = {
 
 const extractAbilities = (arr) => {
   // Solution code here...
-  let collectionName = [];
-  let ablName = arr.map(function (value) {
-    collectionName.push(value.arr.name);
-    return ablName;
+  // let collectionName = [];
+  let snorlaxAbilities = abilities
+  let ablName = snorlaxAbilities.arr.map(function (value) {
+    return value.name;
+
   });
-  return collectionName;
+  return ablName;
 };
 
 /* ------------------------------------------------------------------------------------------------
