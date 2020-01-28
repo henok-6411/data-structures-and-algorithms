@@ -90,15 +90,15 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 const evenOdd = (arr) => {
   // Solution code here...
   let summery = arr.map(function (value) {
+    if (typeof value !== 'number') {
+      return 'N/A';
+    }
     if (value % 2 === 0) {
       return 'even';
     }
     if (value % 2 !== 0) {
       return 'odd';
 
-    }
-    if (value !== Number || value !== '') {
-      return 'N/A';
     }
   });
   return summery;
@@ -148,10 +148,10 @@ const snorlaxAbilities = {
 
 const extractAbilities = (arr) => {
   // Solution code here...
-  // let collectionName = [];
-  let snorlaxAbilities = abilities
-  let ablName = snorlaxAbilities.arr.map(function (value) {
-    return value.name;
+  // let collectionName = ;
+  // let snorlaxAbilities = abilities
+  let ablName = arr.map(value => {
+    return value.ability.name;
 
   });
   return ablName;
@@ -202,6 +202,11 @@ const snorlaxStats = {
 
 const extractStats = (arr) => {
   // Solution code here...
+  // let total = effort + baseStat;
+  const newObj = arr.map(value => {
+    return { name: value.stat.name, total: effort + baseStat};
+  });
+  return newObj;
 };
 
 /* ------------------------------------------------------------------------------------------------
