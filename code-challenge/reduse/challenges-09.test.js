@@ -146,9 +146,9 @@ const characters = [
 ];
 
 const countNumberOfChildren = (arr) => {
-  return arr.reduce((index, obj) => {
-
-    return index.children + 1;
+  let obj = children.length;
+  return arr.reduce((acc, obj) => {
+    return acc + 1;
   }, 0);
 };
 
@@ -164,7 +164,7 @@ const calculateAverage = (arr) => {
   // Solution code here...
   return arr.reduce((acc, sum) => {
 
-    return (acc + sum) % acc;
+    return (acc + sum / 8);
   }, 0);
 };
 
@@ -178,15 +178,17 @@ You are welcome to use the provided isPrime function.
 
 const isPrime = (value) => {
   for (let i = 2; i < value; i++) {
+    let primeNum = [];
     if (value % i === 0) {
-      return false;
+      return primeNum.push(value);
     }
   }
-  return value > 1;
 };
 
-const countPrimeNumbers = (arr) => {
-  // Solution code here...
+const countPrimeNumbers = (primeNum) => {
+  return primeNum.reduce((acc) => {
+    return acc + 1;
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
