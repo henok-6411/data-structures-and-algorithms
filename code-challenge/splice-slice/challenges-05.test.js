@@ -179,11 +179,11 @@ removeLastCharacters('Gregor', 9) returns ''
 const removeLastCharacters = (str, numberOfCharacters) => {
   // Solution code here...
   for (let i = 0; i < str.length; i++) {
-    if (numberOfCharacters > str.length[i]) {
-      return '';
-    }
     if (numberOfCharacters < 1) {
       return str;
+      if (numberOfCharacters > str.length[i]) {
+        return '';
+      }
     } else {
       return numberOfCharacters
     }
@@ -222,17 +222,12 @@ For example, removeVowels('gregor') returns 'grgr'.
 
 const removeVowels = (str) => {
   // Solution code here...
-  const newWord = [];
-  const vowels = ['a', 'e', 'i', 'o', 'u'];
-  for (let i = 0; i < str.length; i++) {
-    let strsplit = str[i].split(' ');
-    if (strsplit[i] === vowels[i]) {
-      return ' ';
-    } else {
-      newWord.push(strsplit.join(' '));
-    }
 
-  }
+  let newArray = str.split(' ').filter(value => {
+    return !/[aeoui]/gm.test(value);
+  })
+  return newArray.join(' ');
+
 
 
 };

@@ -13,7 +13,7 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-  let checker = /[0 - 9]/gm;
+  let checker = /[0-9]/gm;
   return checker.test(input);
 };
 
@@ -38,11 +38,14 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
-  // let checker = /\b([a-j])/g;
-  // return checker.restore(arr);
 
-  return arr.match(/[A-J]\w+/gm) || [];
+
+  const newArr = [];
+  const regex = /^[A-J]\w+/gm;
+  arr.forEach(str => {
+    regex.test(str) ? newArr.push(str.match(regex)[0]) : null;
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -59,8 +62,14 @@ Do not use the vertical bar (pipe) in your pattern.
 
 const matchMonth = (input) => {
   // Solution code here...
-  let checker = /\b()\w+ct+?/gm;
-  return input.match(checker);
+  // let checker = /\b()\w+ct+?/gm;
+  // return input.match(checker);
+
+
+
+  let regex = /^[oO]ct(ober)?$/;
+  return regex.test(input);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -75,9 +84,13 @@ The expected output of "Hello, and have a wonderful day!" is ["and ", "have ", "
 
 const noPunctuation = str => {
 
-  let checker = /(\w*\s)/g;
+  // let checker = /(\w*\s)/g;
 
-  return str.match(checker);
+  // return str.match(checker);
+
+
+  let regex = /\w+\s+/gm;
+  return str.match(regex);
 
 
 };

@@ -33,15 +33,16 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 const filterStringsWithVowels = (arr) => {
   // Solution code here...
-  let vowels = ('a', 'e', 'i', 'o', 'u');
+  const vowelregx = /[a e i o u]/;
   let newArray = arr.filter(value => {
 
-    return (value[0] === vowels);
+    return (vowelregx.test(value));
 
   });
   return newArray;
 };
 
+// return arr.filter(str => vowelregx.test(str));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -102,6 +103,7 @@ const snorlaxData = {
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
   // Solution code here...
+  return arr.filter(value => value.baseStat > minBaseStat);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -114,6 +116,9 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 
 const getStatName = (arr, minBaseStat) => {
   // Solution code here...
+  return arr.filter(value => value.baseStat > minBaseStat).map(value => {
+    return value.stat.name;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -187,19 +192,19 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 const evenOddNumericValues = (arr) => {
   // Solution code here...
   arr.map(value => {
+    let newArray = arr.filter(value => {
+      return (typeof value === 'number');
+    });
+    return newArray;
+
     if (value % 2 === 0) {
       return 'even';
     } else if (value % 2 !== 0) {
       return 'odd';
-    } else {
-      let newArray = arr.filter(value => {
-        return (value === Number);
-      });
-      return newArray;
     }
-
   });
 };
+
 
 
 /* ------------------------------------------------------------------------------------------------
