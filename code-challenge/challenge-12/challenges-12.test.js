@@ -114,7 +114,11 @@ The top row of the board is considered row zero and row numbers increase as they
 ------------------------------------------------------------------------------------------------ */
 
 const battleship = (board, row, col) => {
-  //
+
+  if (board[row][col] === '#') {
+    return 'hit';
+  }
+  return 'miss';
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -126,8 +130,19 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 ------------------------------------------------------------------------------------------------ */
 
 const calculateProduct = (numbers) => {
-  // Solution code here...
+  return numbers.map(array => {
+    if (array.length > 0) {
+      return array.reduce((acc, curVa) => {
+        return acc * curVa;
+      });
+    } else {
+      return 1;
+    }
+  }).reduce((acc, curVa) => {
+    return acc * curVa;
+  });
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -146,7 +161,18 @@ const weeklyTemperatures = [
 ];
 
 const averageDailyTemperature = (weather) => {
-  // Solution code here...
+  /// you need three reduce method . 
+  /// make sure weather is your last .
+  return weather.map(array => {
+    return array.reduce((acc, curVa) => {
+      return acc + curVa;
+    }) / array.length;
+  }).reduce((acc, curVal) => {
+    return acc + curVal;
+  }) / weather.length;
+
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -168,6 +194,18 @@ let lowestWeeklyTemperatureData = [
 
 const lowestWeeklyAverage = (weather) => {
   // Solution code here...
+  return weather.map(array => {
+    return array.reduce((acc, curVa) => {
+      return acc + curVa;
+    }) / array.length;
+  }).reduce((acc, curVa) => {
+    if (acc < curVa) {
+      return acc;
+    } else {
+      return curVa;
+    }
+  });
+
 };
 
 /* ------------------------------------------------------------------------------------------------
