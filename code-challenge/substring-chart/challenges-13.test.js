@@ -40,7 +40,7 @@ For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = (arr) => {
-  return arr.
+
 
 
 };
@@ -55,6 +55,12 @@ For example, 'abcdefg' returns 'bdf'
 
 const onlyOddChars = (str) => {
   // Solution code here...
+  return str.map(str => {
+    if (str[0] % 2 === 0) {
+      return str;
+    }
+  });
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -64,7 +70,7 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
